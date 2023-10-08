@@ -7,7 +7,7 @@ import rp2
 # Configure the number of WS2812 LEDs.
 NUM_LEDS = 4
 PIN_NUM = 22
-brightness = 0.03
+brightness = 0.1
 
 @rp2.asm_pio(sideset_init=rp2.PIO.OUT_LOW, out_shiftdir=rp2.PIO.SHIFT_LEFT, autopull=True, pull_thresh=24)
 def ws2812():
@@ -100,5 +100,6 @@ print("chases")
 for color in COLORS:       
     color_chase(color, 0.1)
 
-print("rainbow")
-rainbow_cycle(0)
+while True:
+    print("rainbow")
+    rainbow_cycle(0)
